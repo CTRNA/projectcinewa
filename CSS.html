@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canadian Student Society</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="thing.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="thing.png" id="thing2" width="70" height="70" alt="">
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">BC Youth Service</a></li>
+        <li><a href="#">Private Tutoring</a></li>
+        <li><a href="#">Meet The Team</a></li>
+        <li><a href="#">Join The Team</a></li>
+        <li><a href="#">Our Partnerships</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#" class="search">Search</a></li>
+      </ul>
+    </nav>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </header>
+  <section>
+    
+    <img src="transition.png" id="transition" alt="">
+    <img src="stars.png" id="stars" alt="">
+    <img src="moo.png" id="moon" alt="">
+    <img src="mountains_behind.png" id="mountains_behind" alt="">
+    <!--  <h2 id="text"><pp id="textglow"></pp></h2>  -->
+
+    <div class="container">
+      <h1>
+        <pp href="#sec" class="typewrite" data-period="1000" data-type='[ "Title", "We Love to Explore", "We Love to Learn", "We Love to Develop." ]'>
+          <span class="wrap"></span>
+        </pp>
+      </h1>
+      <h3 id="middle"><br>Discover  &nbsp&nbsp&nbsp&nbsp&nbsp  <a href="#sec" id="btn">Explore</a> &nbsp &nbsp  &nbsp&nbsp Learn</h3>
+    </div>
+    
+
+
+    <h3 id="text20"><br><br><br><br><br><br><ilikemen id="textglow"></ilikemen></h3>
+    <img src="mountains_front.png" id="mountains_front" alt="">
+    <div class="content">
+      <img src="background.png" id="background" alt="">
+      <img src="background2.png" id="background2" alt="">
+    </div>
+    
+  </section>
+  <section>
+    
+    <img src="water_front.png" id="water_front" alt="">
+    <img src="water_behind.png" id="water_behind" alt="">
+
+    <img src="page2.png" id="page2" alt="">
+
+    <div class="sec" id="sec">
+      <div id="3dtext" data-text="Educating and Serving, since 2014">Educating and Serving, <br>since 2014</div>
+      <p><br><br><br><br>Our tutors support your child in every dream, and each course will lead them into a maze of possibilities.</p>
+    </div>
+  </section>
+  
+  <script type="text/javascript">
+    let moon = document.getElementById('moon');
+    let stars = document.getElementById('stars');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let mountains_front = document.getElementById('mountains_front');
+    let background = document.getElementById('background');
+    let middle = document.getElementById('middle');
+    let header = document.querySelector('header');
+    let page2 = document.getElementById('page2');
+    let background2 = document.getElementById('background2'); // Corrected the typo in the element's ID
+
+    let isPage2Stopped = false;
+    let prevScrollPos = window.scrollY;
+
+    window.addEventListener('scroll', function() {
+      var value = window.scrollY;
+      moon.style.top = -value * -1.05 + 'px';
+      stars.style.top = value * 0.25 + 'px';
+      mountains_behind.style.top = -value * -0.5 + 'px';
+      header.style.top = -value * -0.5 + 'px';
+      mountains_front.style.top = -value * 0 + 'px';
+      background.style.top = -value * -1 + 'px';
+      background2.style.top = -value * -1 + 'px';
+      text.style.marginTop = value * -1 + 'px';
+      middle.style.marginTop = value * -1 + 'px';
+      text.style.marginRight = value * -0 + 'px';
+
+      transition.style.top = -value * 1 + 'px';
+      water_front.style.top = -value * 0 + 'px';
+      water_behind.style.top = -value * -0.5 + 'px';
+
+      if ((value < prevScrollPos && isPage2Stopped) || (value > prevScrollPos && !isPage2Stopped)) {
+        isPage2Stopped = false;
+      }
+
+      if (!isPage2Stopped && value >= 500) {
+        isPage2Stopped = true;
+        page2.style.top = '-1000px';
+      } else if (!isPage2Stopped) {
+        page2.style.top = -value * 2 + 'px';
+      }
+
+      prevScrollPos = value;
+    });
+  </script>
+
+  <script type="text/javascript">
+    var text = document.getElementById('3dtext');
+    var shadow = '';
+    for (var i = 0; i < 2; i++) {
+      shadow += (shadow ? ',' : '') + -i * 1 + 'px ' + i * 1 + 'px 0 #000000';
+    }
+    text.style.textShadow = shadow;
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

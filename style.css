@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Quicksand:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(#c5feff, hsl(0, 0%, 100%));
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+header ul li a {
+  text-decoration:none ;
+  padding: 0px 0px;
+  color: rgb(0, 0, 0);
+  border-radius: 200px;
+  max-width: 8px;
+  transition: transform 0.6s ease-in-out;
+}
+header ul li:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+header ul li:not(:hover) {
+  transition: transform 0.3s ease-in-out; /* Add easing to the transition */
+}
+
+header ul li:not(:hover) a:hover {
+  transform: translateY(0);
+}
+
+header img #thing2 {
+  padding: 14px 16px;
+  z-index: 1001;
+}
+
+
+section:before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #ffffff, transparent);
+  z-index: 1000;
+}
+
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section img#moon {
+  mix-blend-mode: screen;
+  z-index: -3;
+}
+
+section img#mountains_front {
+  z-index: -2;
+}
+
+section img#mountains_behind {
+  z-index: -4;
+}
+
+section img#stars {
+  z-index: -5;
+}
+
+section img#background {
+  z-index: -8;
+  opacity: 0.9;
+}
+
+section img#background2 {
+  z-index: -8;
+  opacity: 0.9;
+  background-attachment: fixed;
+}
+
+
+section img#transition {
+  z-index: 1;
+  transform: translateY(400px);
+  min-height: 250%;
+}
+
+section img#water_front {
+  min-height: 100%;
+  transform: translateX(-5px);
+}
+section img#water_behind {
+  min-height: 100%;
+  transform: translateX(0px);
+  z-index: -7
+}
+section img#page2 {
+  min-height: 300%;
+  transform: translateY(400px);
+  z-index: 1000
+}
+
+
+h2#text { 
+  position: absolute;
+  color: rgb(0, 0, 0);
+  white-space: nowrap;
+  font-size: 5vw;
+  transform: translateY(0px);
+  z-index: 1;
+  font-family: 'Quicksand', sans-serif;
+  overflow-x:hidden;
+}
+
+#btn {
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 2px;
+  fill-opacity: 0.1;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  transform: translateY(150px);
+  font-size: 1em;
+  z-index: 9;
+  font: bold;
+}
+
+.sec di  {
+  position: relative;
+  font-size: 50pt;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+  transform: rotate(-10deg) skew(16deg) translateY(-300px) translateX(-20px);
+}
+
+.sec div:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  color: rgb(3, 200, 255);
+  text-shadow: none;
+  filter: blur(20px);
+  z-index: -100;
+}
+
+.sec p {
+  font-size: 1.2em;
+  color: rgb(255, 250, 250);
+  font-family: 'Quicksand', sans-serif;
+}
+
+h3#text20 {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  font-size: 1vw;
+  transform: translateY(0px);
+  z-index: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+input[type=checkbox] {
+  display: none;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  transform: translateX(65px);
+}
+
+.burger div {
+  position: relative;
+  z-index: 1001;
+  width: 20px;
+  height: 2px;
+  margin: 5px;
+  background-color: black;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    background-color: #ffffff;
+    z-index: 100;
+    display: flex;
+    border-radius: 50px;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    opacity: 0.7;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    z-index: 1001;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  min-height: 8vh;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  color: #0000;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@media screen and (min-width: 675px) {
+  pp:before {
+    content: "";
+  }
+}
+
+@media screen and (max-width: 675px) {
+  pp:before {
+    content: "C S S";
+    font-size: 300%;
+  }
+}
+
+@media screen and (min-width: 675px) {
+  ilikemen:before {
+    content: "International Student Tutoring & Connections Organization";
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  ilikemen:before {
+    content: "";
+    font-size: 300%;
+  }
+}
+
+pp#textglow {
+  color: rgb(0, 0, 0);
+}
+
+ilikemen#textglow {
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 0px 100px rgb(184, 184, 184), 0px 30px 30px rgb(120, 120, 120), 0px 0px 30px rgb(103, 103, 103), 30px 0px 10px #ffffff;
+}
+
+h1#title1 {
+  text-align: center;
+  display: none;
+  text-decoration: none;
+}
+
+.discover-text {
+  position: relative;
+  top: -30px; 
+}
+
+section div h3{
+  position: fixed;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h3 {
+  margin-top: 20px;
+  transform: translateY(100px)
+}
